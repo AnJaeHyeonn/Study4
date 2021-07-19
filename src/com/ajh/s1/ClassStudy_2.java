@@ -135,13 +135,68 @@ public class ClassStudy_2 {
 				break;
 
 			case 4:
-				for (int i = 0; i < st.length - 1; i++) {
-					for (int j = 0; j < st.length; j++) {
-						if (st[i].avg < st[j].avg) {
+				Student[] st2 = new Student[count];
+				for (int i = 0; i < st2.length; i++) {
+					st2[i] = new Student();
+					st2[i].name = st[i].name;
+					st2[i].num = st[i].num;
+					st2[i].kor = st[i].kor;
+					st2[i].eng = st[i].eng;
+					st2[i].math = st[i].math;
+					st2[i].total = st[i].total;
+					st2[i].avg = st[i].avg;
+				}
+
+				for (int i = 0; i < st2.length - 1; i++) {
+					for (int j = i + 1; j < st2.length; j++) {
+						if (st2[i].avg < st2[j].avg) {
+
+							String temp = st2[j].name;
+							st2[j].name = st2[i].name;
+							st2[i].name = temp;
+
+							int temp2 = st2[j].num;
+							st2[j].num = st2[i].num;
+							st2[i].num = temp2;
+
+							int temp3 = st2[j].kor;
+							st2[j].kor = st2[i].kor;
+							st2[i].kor = temp3;
+
+							int temp4 = st2[j].eng;
+							st2[j].eng = st2[i].eng;
+							st2[i].eng = temp4;
+
+							int temp5 = st2[j].math;
+							st2[j].math = st2[i].math;
+							st2[i].math = temp5;
+
+							int temp6 = st2[j].total;
+							st2[j].total = st2[i].total;
+							st2[i].total = temp6;
+
+							double temp7 = st2[j].avg;
+							st2[j].avg = st2[i].avg;
+							st2[i].avg = temp7;
 
 						}
 					}
 				}
+
+				for (int i = 0; i < st2.length; i++) {
+					System.out.println("=======================================================");
+					System.out.println("이름\t번호\t국어\t영어\t수학\t총점\t평균");
+					System.out.print(st2[i].name + "\t");
+					System.out.print(st2[i].num + "\t");
+					System.out.print(st2[i].kor + "\t");
+					System.out.print(st2[i].eng + "\t");
+					System.out.print(st2[i].math + "\t");
+					System.out.print(st2[i].total + "\t");
+					System.out.println(st2[i].avg);
+					System.out.println("=======================================================");
+				}
+
+				break;
 			case 5:
 				check = !check;
 
