@@ -12,9 +12,9 @@ public class ClassStudy_2 {
 		// 총점, 평균 계산
 
 		// 모든 학생의 정보 출력
-		int student = sc.nextInt();
+		int count = sc.nextInt();
 
-		Student[] st = new Student[student];
+		Student[] st = new Student[count];
 
 		for (int i = 0; i < st.length; i++) {
 			st[i] = new Student();
@@ -31,6 +31,21 @@ public class ClassStudy_2 {
 
 			st[i].total = st[i].kor + st[i].eng + st[i].math;
 			st[i].avg = st[i].total / 3.0;
+
+//			Student student = new Student();
+//			System.out.println("이름을 입력하세요");
+//			student.name = sc.next();
+//			System.out.println("번호 입력");
+//			student.num = sc.nextInt();
+//			System.out.println("국어 입력");
+//			student.kor = sc.nextInt();
+//			System.out.println("영어 입력");
+//			student.eng = sc.nextInt();
+//			System.out.println("수학 입력");
+//			student.math = sc.nextInt();
+//			student.total = student.kor + student.eng + student.math;
+//			student.avg = student.total / 3.0;
+//			st[i]=student;
 		}
 
 		System.out.println("이름\t번호\t국어\t영어\t수학\t총점\t평균");
