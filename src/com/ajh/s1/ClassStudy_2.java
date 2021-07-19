@@ -8,7 +8,7 @@ public class ClassStudy_2 {
 
 		Scanner sc = new Scanner(System.in);
 		System.out.println("학생 수를 입력하세요.");
-		// 학생의 수 만큼 정보를 입력 - 이름, 번호, 국어, 영어, 수학      
+		// 학생의 수 만큼 정보를 입력 - 이름, 번호, 국어, 영어, 수학 
 		// 총점, 평균 계산
 
 		// 모든 학생의 정보 출력
