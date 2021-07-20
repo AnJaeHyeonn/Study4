@@ -5,33 +5,24 @@ import java.util.Scanner;
 public class StudentMenu {
 
 	public void start() {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("학생 수를 입력하세요.");
+
 		// 학생의 수 만큼 정보를 입력 - 이름, 번호, 국어, 영어, 수학
 		// 총점, 평균 계산
-
 		// 모든 학생의 정보 출력
-		int count = sc.nextInt();
 
-		Student[] students = new Student[count];
+		Scanner sc = new Scanner(System.in);
+
 		StudentView sv = new StudentView();
+		StudentInput si = new StudentInput();
+
+		System.out.println("학생 수를 입력하세요.");
+		int count = sc.nextInt(); // 학생 수 입력
+		Student[] students = new Student[count]; // 입력 한 학생 수 크기의 배열 선언
 
 		for (int i = 0; i < students.length; i++) {
-
-			Student student = new Student();
-			System.out.println("이름을 입력하세요");
-			student.name = sc.next();
-			System.out.println("번호 입력");
-			student.num = sc.nextInt();
-			System.out.println("국어 입력");
-			student.kor = sc.nextInt();
-			System.out.println("영어 입력");
-			student.eng = sc.nextInt();
-			System.out.println("수학 입력");
-			student.math = sc.nextInt();
-			student.total = student.kor + student.eng + student.math;
-			student.avg = student.total / 3.0;
-			students[i] = student;
+//			Student student = si.makeStudent();
+//			students[i] = student;
+			students[i] = si.makeStudent();
 		}
 
 		boolean flag = true;
@@ -67,7 +58,11 @@ public class StudentMenu {
 				break;
 
 			case 3:
-				System.out.println("학생 정보를 추가합니다.");
+
+				Student[] st1 = si.addArray(students);
+				st1[students.length] = si.makeStudent();
+				students = st1;
+
 				break;
 
 			case 4:
