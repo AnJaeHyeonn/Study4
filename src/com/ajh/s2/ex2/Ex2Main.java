@@ -5,7 +5,7 @@ public class Ex2Main {
 	public static void main(String[] args) {
 		System.out.println("Ex2 Start");
 
-		StudentMenu sm = new StudentMenu();
+		StudentController sm = new StudentController();
 
 		sm.start();
 

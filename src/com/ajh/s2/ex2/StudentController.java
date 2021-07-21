@@ -2,7 +2,7 @@ package com.ajh.s2.ex2;
 
 import java.util.Scanner;
 
-public class StudentMenu {
+public class StudentController {
 
 	public void start() {
 
@@ -14,6 +14,7 @@ public class StudentMenu {
 
 		StudentView sv = new StudentView();
 		StudentInput si = new StudentInput();
+		StudentSort ss = new StudentSort();
 
 		System.out.println("학생 수를 입력하세요.");
 		int count = sc.nextInt(); // 학생 수 입력
@@ -59,14 +60,14 @@ public class StudentMenu {
 
 			case 3:
 
-				Student[] st1 = si.addArray(students);
-				st1[students.length] = si.makeStudent();
-				students = st1;
-
+				students = si.addArray(students);
+				students[students.length - 1] = si.makeStudent();
 				break;
 
 			case 4:
 				System.out.println("성적 순으로 정보를 출력합니다.");
+				Student[] sort = ss.sortByAvg(students);
+				sv.viewAll(sort);
 				break;
 
 			default:
